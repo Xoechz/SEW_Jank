@@ -44,10 +44,19 @@ Sprachen Vergleich
 	
 	
 	
-	ASP.NET Core							ASP.NET 4.x
-	Windows, macOS Linux 					Windows
-	Razor Pages for Web UI					Web Forms, SignalR, MVC, Web API, WebHooks or WebPages
-	multiple versions per machine			one version per machine
-	Visual Studio, VS for Mac or VS Code	VisualStudio
-	Higher performance than ASP.NET 4.x		Good Performance
-	Use .NET Core runtime					Use .NET Framework runtime
+	ASP.NET Core
+		Windows, macOS Linux
+		Razor Pages for Web UI
+		multiple versions per machine
+		Visual Studio, VS for Mac or VS Code
+		Higher performance than ASP.NET 4.x
+		Use .NET Core runtime
+	
+	ASP.NET 4.x
+		Windows
+		Web Forms, SignalR, MVC, Web API, WebHooks or WebPages
+		one version per machine
+		VisualStudio
+		Good Performance
+		Use .NET Framework runtime
+	
