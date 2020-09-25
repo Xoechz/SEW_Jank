@@ -1,0 +1,13 @@
+C:\Users\leonh\Documents\SEW\LoggerTest\bin\Debug\netcoreapp3.1\LoggerTest.exe
+C:\Users\leonh\Documents\SEW\LoggerTest\bin\Debug\netcoreapp3.1\LoggerTest.deps.json
+C:\Users\leonh\Documents\SEW\LoggerTest\bin\Debug\netcoreapp3.1\LoggerTest.runtimeconfig.json
+C:\Users\leonh\Documents\SEW\LoggerTest\bin\Debug\netcoreapp3.1\LoggerTest.runtimeconfig.dev.json
+C:\Users\leonh\Documents\SEW\LoggerTest\bin\Debug\netcoreapp3.1\LoggerTest.dll
+C:\Users\leonh\Documents\SEW\LoggerTest\bin\Debug\netcoreapp3.1\LoggerTest.pdb
+C:\Users\leonh\Documents\SEW\LoggerTest\obj\Debug\netcoreapp3.1\LoggerTest.csprojAssemblyReference.cache
+C:\Users\leonh\Documents\SEW\LoggerTest\obj\Debug\netcoreapp3.1\LoggerTest.AssemblyInfoInputs.cache
+C:\Users\leonh\Documents\SEW\LoggerTest\obj\Debug\netcoreapp3.1\LoggerTest.AssemblyInfo.cs
+C:\Users\leonh\Documents\SEW\LoggerTest\obj\Debug\netcoreapp3.1\LoggerTest.csproj.CoreCompileInputs.cache
+C:\Users\leonh\Documents\SEW\LoggerTest\obj\Debug\netcoreapp3.1\LoggerTest.dll
+C:\Users\leonh\Documents\SEW\LoggerTest\obj\Debug\netcoreapp3.1\LoggerTest.pdb
+C:\Users\leonh\Documents\SEW\LoggerTest\obj\Debug\netcoreapp3.1\LoggerTest.genruntimeconfig.cache
