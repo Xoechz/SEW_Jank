@@ -5,13 +5,13 @@
 	3 Schichten in Webapplikationen
 	-------------------------
 	|PL - Presentation Layer|
-	------------------------------------------------
-	↕ Webservices (z.B. Rest, SOAP)	|Domänenobjekte|
-	------------------------------------------------
+	-------------------------------------------------
+	↕ Webservices (z.B. Rest, SOAP)	|Businessobjekte|
+	-------------------------------------------------
 	|BL - Buisnesslogic     |	Unittests geeignet
-	-------------------------
-	↕	|Domänenobjekte|
-	-------------------------
+	------------------------------------------------
+	↕				|Domänenobjekte|
+	------------------------------------------------
 	|DAL - Data Access Layer|	Unittests geeignet
 	|(z.B. Entity Framework)|
 	-------------------------
@@ -59,4 +59,10 @@ Sprachen Vergleich
 		VisualStudio
 		Good Performance
 		Use .NET Framework runtime
-	
+				
+
+Dependency injection
+https://docs.microsoft.com/de-de/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2
+
+Designpatterns
+I muas ehrlich song ka ahnung wos ma mochn.
