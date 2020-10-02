@@ -62,7 +62,8 @@ Sprachen Vergleich
 				
 
 Dependency injection
-https://docs.microsoft.com/de-de/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2
+	https://docs.microsoft.com/de-de/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2
 
 Designpatterns
-I muas ehrlich song ka ahnung wos ma mochn.
+	I muas ehrlich song ka ahnung wos ma mochn.
+
