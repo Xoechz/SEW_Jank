@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,12 +8,16 @@ namespace TelemetrikCar.Model
 {
     public class Telemetrik
     {
-        private int IdTel { get; set; }
-        private Car Car { get; set; }
-        private double Latitude{ get; set; }
-        private double Longitude{ get; set; }
-        private double Speed{ get; set; }
-        private double Capacity{ get; set; }
-
+        [Key]
+        public int IdTel { get; set; }
+        public Car Car { get; set; }
+        public double Latitude{ get; set; }
+        public double Longitude{ get; set; }
+        public double Speed{ get; set; }
+        public double Capacity{ get; set; }
+        [DataType(DataType.Date)]
+        public DateTime CreatedAt { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime ModifiedAt { get; set; }
     }
 }

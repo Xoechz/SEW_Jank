@@ -1,0 +1,60 @@
+﻿@page
+@model TelemetrikCar.Pages.Telemetrik.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Telemetrik</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Telemetrik.IdTel" />
+            <div class="form-group">
+                <label asp-for="Telemetrik.Latitude" class="control-label"></label>
+                <input asp-for="Telemetrik.Latitude" class="form-control" />
+                <span asp-validation-for="Telemetrik.Latitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telemetrik.Longitude" class="control-label"></label>
+                <input asp-for="Telemetrik.Longitude" class="form-control" />
+                <span asp-validation-for="Telemetrik.Longitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telemetrik.Speed" class="control-label"></label>
+                <input asp-for="Telemetrik.Speed" class="form-control" />
+                <span asp-validation-for="Telemetrik.Speed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telemetrik.Capacity" class="control-label"></label>
+                <input asp-for="Telemetrik.Capacity" class="form-control" />
+                <span asp-validation-for="Telemetrik.Capacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telemetrik.CreatedAt" class="control-label"></label>
+                <input asp-for="Telemetrik.CreatedAt" class="form-control" />
+                <span asp-validation-for="Telemetrik.CreatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telemetrik.ModifiedAt" class="control-label"></label>
+                <input asp-for="Telemetrik.ModifiedAt" class="form-control" />
+                <span asp-validation-for="Telemetrik.ModifiedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
