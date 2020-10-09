@@ -15,5 +15,7 @@ namespace TelemetrikCar.Data
         }
 
         public DbSet<TelemetrikCar.Model.Telemetrik> Telemetrik { get; set; }
+
+        public DbSet<TelemetrikCar.Model.Car> Car { get; set; }
     }
 }

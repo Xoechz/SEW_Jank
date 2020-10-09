@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using TelemetrikCar.Data;
 using TelemetrikCar.Model;
 
-namespace TelemetrikCar.Pages.Telemetrik
+namespace TelemetrikCar.Pages.Car
 {
     public class IndexModel : PageModel
     {
@@ -19,19 +19,19 @@ namespace TelemetrikCar.Pages.Telemetrik
             _context = context;
         }
 
-        public IList<Model.Telemetrik> Telemetrik { get;set; }
+        public IList<Model.Car> Car { get;set; }
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
         public async Task OnGetAsync()
         {
-            var telemetrik = from m in _context.Telemetrik
+            var car = from m in _context.Car
                 select m;
             if (!string.IsNullOrEmpty(SearchString))
             {
-                telemetrik = telemetrik.Where(s => s.Car.Name.Contains(SearchString));
+                car = car.Where(s => s.Name.Contains(SearchString));
             }
 
-            Telemetrik = await telemetrik.ToListAsync();
+            Car = await car.ToListAsync();
         }
     }
 }

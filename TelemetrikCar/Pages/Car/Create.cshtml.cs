@@ -5,11 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using TelemetrikCar.Data;
 using TelemetrikCar.Model;
 
-namespace TelemetrikCar.Pages.Telemetrik
+namespace TelemetrikCar.Pages.Car
 {
     public class CreateModel : PageModel
     {
@@ -20,19 +19,14 @@ namespace TelemetrikCar.Pages.Telemetrik
             _context = context;
         }
 
-        
-
-        public async Task<IActionResult> OnGetAsync()
+        public IActionResult OnGet()
         {
-            IQueryable<Model.Car> carQuery = from m in _context.Car
-                select m;
-            Car = new SelectList(await carQuery.ToListAsync());
             return Page();
         }
 
         [BindProperty]
-        public Model.Telemetrik Telemetrik { get; set; }
-        public SelectList Car { get; set; }
+        public Model.Car Car { get; set; }
+
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
@@ -41,10 +35,9 @@ namespace TelemetrikCar.Pages.Telemetrik
             {
                 return Page();
             }
-            
-            Telemetrik.ModifiedAt = DateTime.Now;
-            Telemetrik.CreatedAt = DateTime.Now;
-            _context.Telemetrik.Add(Telemetrik);
+            Car.ModifiedAt = DateTime.Now;
+            Car.CreatedAt = DateTime.Now;
+            _context.Car.Add(Car);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

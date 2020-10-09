@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using TelemetrikCar.Data;
 using TelemetrikCar.Model;
 
-namespace TelemetrikCar.Pages.Telemetrik
+namespace TelemetrikCar.Pages.Car
 {
     public class EditModel : PageModel
     {
@@ -21,7 +21,7 @@ namespace TelemetrikCar.Pages.Telemetrik
         }
 
         [BindProperty]
-        public Model.Telemetrik Telemetrik { get; set; }
+        public Model.Car Car { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,9 +30,9 @@ namespace TelemetrikCar.Pages.Telemetrik
                 return NotFound();
             }
 
-            Telemetrik = await _context.Telemetrik.FirstOrDefaultAsync(m => m.IdTel == id);
+            Car = await _context.Car.FirstOrDefaultAsync(m => m.IdCar == id);
 
-            if (Telemetrik == null)
+            if (Car == null)
             {
                 return NotFound();
             }
@@ -47,10 +47,8 @@ namespace TelemetrikCar.Pages.Telemetrik
             {
                 return Page();
             }
-            Telemetrik.ModifiedAt= DateTime.Now;
-            
-            _context.Attach(Telemetrik).State = EntityState.Modified;
-            
+            Car.ModifiedAt = DateTime.Now;
+            _context.Attach(Car).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +56,7 @@ namespace TelemetrikCar.Pages.Telemetrik
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TelemetrikExists(Telemetrik.IdTel))
+                if (!CarExists(Car.IdCar))
                 {
                     return NotFound();
                 }
@@ -71,9 +69,9 @@ namespace TelemetrikCar.Pages.Telemetrik
             return RedirectToPage("./Index");
         }
 
-        private bool TelemetrikExists(int id)
+        private bool CarExists(int id)
         {
-            return _context.Telemetrik.Any(e => e.IdTel == id);
+            return _context.Car.Any(e => e.IdCar == id);
         }
     }
 }

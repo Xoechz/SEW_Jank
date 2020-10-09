@@ -174,3 +174,9 @@ C:\Users\leonh\Documents\SEW\TelemetrikCar\obj\Debug\netcoreapp3.1\Razor\Pages\T
 C:\Users\leonh\Documents\SEW\TelemetrikCar\obj\Debug\netcoreapp3.1\Razor\Pages\Telemetrik\Details.cshtml.g.cs
 C:\Users\leonh\Documents\SEW\TelemetrikCar\obj\Debug\netcoreapp3.1\Razor\Pages\Telemetrik\Edit.cshtml.g.cs
 C:\Users\leonh\Documents\SEW\TelemetrikCar\obj\Debug\netcoreapp3.1\Razor\Pages\Telemetrik\Index.cshtml.g.cs
+C:\Users\leonh\Documents\SEW\TelemetrikCar\obj\Debug\netcoreapp3.1\TelemetrikCar.csprojAssemblyReference.cache
+C:\Users\leonh\Documents\SEW\TelemetrikCar\obj\Debug\netcoreapp3.1\Razor\Pages\Car\Create.cshtml.g.cs
+C:\Users\leonh\Documents\SEW\TelemetrikCar\obj\Debug\netcoreapp3.1\Razor\Pages\Car\Delete.cshtml.g.cs
+C:\Users\leonh\Documents\SEW\TelemetrikCar\obj\Debug\netcoreapp3.1\Razor\Pages\Car\Details.cshtml.g.cs
+C:\Users\leonh\Documents\SEW\TelemetrikCar\obj\Debug\netcoreapp3.1\Razor\Pages\Car\Edit.cshtml.g.cs
+C:\Users\leonh\Documents\SEW\TelemetrikCar\obj\Debug\netcoreapp3.1\Razor\Pages\Car\Index.cshtml.g.cs
