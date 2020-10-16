@@ -22,17 +22,9 @@ namespace TelemetrikCar.Pages.Telemetrik
 
         
 
-        public async Task<IActionResult> OnGetAsync()
-        {
-            IQueryable<Model.Car> carQuery = from m in _context.Car
-                select m;
-            Car = new SelectList(await carQuery.ToListAsync());
-            return Page();
-        }
-
         [BindProperty]
         public Model.Telemetrik Telemetrik { get; set; }
-        public SelectList Car { get; set; }
+
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
@@ -41,7 +33,6 @@ namespace TelemetrikCar.Pages.Telemetrik
             {
                 return Page();
             }
-            
             Telemetrik.ModifiedAt = DateTime.Now;
             Telemetrik.CreatedAt = DateTime.Now;
             _context.Telemetrik.Add(Telemetrik);

@@ -10,6 +10,7 @@ namespace TelemetrikCar.Model
     {
         [Key]
         public int IdTel { get; set; }
+        public int? idCar { get; set; }
         public Car Car { get; set; }
         public double Latitude{ get; set; }
         public double Longitude{ get; set; }

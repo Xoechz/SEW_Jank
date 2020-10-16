@@ -47,10 +47,8 @@ namespace TelemetrikCar.Pages.Telemetrik
             {
                 return Page();
             }
-            Telemetrik.ModifiedAt= DateTime.Now;
-            
+            Telemetrik.ModifiedAt = DateTime.Now;
             _context.Attach(Telemetrik).State = EntityState.Modified;
-            
 
             try
             {

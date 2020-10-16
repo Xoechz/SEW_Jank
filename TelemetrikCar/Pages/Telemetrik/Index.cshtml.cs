@@ -20,18 +20,10 @@ namespace TelemetrikCar.Pages.Telemetrik
         }
 
         public IList<Model.Telemetrik> Telemetrik { get;set; }
-        [BindProperty(SupportsGet = true)]
-        public string SearchString { get; set; }
+
         public async Task OnGetAsync()
         {
-            var telemetrik = from m in _context.Telemetrik
-                select m;
-            if (!string.IsNullOrEmpty(SearchString))
-            {
-                telemetrik = telemetrik.Where(s => s.Car.Name.Contains(SearchString));
-            }
-
-            Telemetrik = await telemetrik.ToListAsync();
+            Telemetrik = await _context.Telemetrik.ToListAsync();
         }
     }
 }

@@ -16,5 +16,6 @@ namespace TelemetrikCar.Model
         public DateTime CreatedAt { get; set; }
         [DataType(DataType.Date)]
         public DateTime ModifiedAt { get; set; }
+        public ICollection<Telemetrik> Telemetriks { get; set; }
     }
 }

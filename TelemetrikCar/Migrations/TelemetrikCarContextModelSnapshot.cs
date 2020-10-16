@@ -71,6 +71,9 @@ namespace TelemetrikCar.Migrations
                     b.Property<double>("Speed")
                         .HasColumnType("float");
 
+                    b.Property<int?>("idCar")
+                        .HasColumnType("int");
+
                     b.HasKey("IdTel");
 
                     b.HasIndex("CarIdCar");
@@ -81,7 +84,7 @@ namespace TelemetrikCar.Migrations
             modelBuilder.Entity("TelemetrikCar.Model.Telemetrik", b =>
                 {
                     b.HasOne("TelemetrikCar.Model.Car", "Car")
-                        .WithMany()
+                        .WithMany("Telemetriks")
                         .HasForeignKey("CarIdCar");
                 });
 #pragma warning restore 612, 618
