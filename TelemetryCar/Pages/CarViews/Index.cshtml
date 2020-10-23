@@ -32,7 +32,9 @@
 @foreach (var item in Model.CarModel) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                <a asp-area="" asp-page="/TelemetryViews/Index" asp-route-SearchString="@item.Name" >
+                    @Html.DisplayFor(modelItem => item.Name)
+                </a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Typ)

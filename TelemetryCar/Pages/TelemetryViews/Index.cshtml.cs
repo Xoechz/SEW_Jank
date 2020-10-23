@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic.CompilerServices;
 using TelemetryCar.Data;
 using TelemetryCar.Model;
 
@@ -20,11 +21,22 @@ namespace TelemetryCar.Pages.TelemetryViews
         }
 
         public IList<TelemetryModel> TelemetryModel { get;set; }
-
-        public async Task OnGetAsync()
+        [BindProperty(SupportsGet = true)]
+        public string SearchString { get; set; }
+        public void OnGet()
         {
-            TelemetryModel = await _context.TelemetryModel
-                .Include(t => t.Car).ToListAsync();
+           
+            TelemetryModel = _context.TelemetryModel
+                .Include(t => t.Car).ToList(); 
+            var telemetry = from t in TelemetryModel
+                select t;
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                telemetry = telemetry.Where(t => t.Car.Name.ToLower().Contains(SearchString.ToLower()));
+            }
+            
+
+            TelemetryModel = telemetry.ToList();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{SearchString?}"
 @model TelemetryCar.Pages.TelemetryViews.IndexModel
 
 @{
@@ -10,11 +10,20 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<form>
+    <p>
+        Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.TelemetryModel[0].Car)
+                @Html.DisplayNameFor(model => model.TelemetryModel[0].Car.IdCar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelemetryModel[0].Car.Name)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.TelemetryModel[0].Latitude)
@@ -29,6 +38,9 @@
                 @Html.DisplayNameFor(model => model.TelemetryModel[0].Capacity)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.TelemetryModel[0].Throttle)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.TelemetryModel[0].CreatedAt)
             </th>
             <th>
@@ -38,10 +50,14 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.TelemetryModel) {
+        @foreach (var item in Model.TelemetryModel)
+        {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Car.IdCar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Latitude)
@@ -56,6 +72,9 @@
                 @Html.DisplayFor(modelItem => item.Capacity)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Throttle)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.CreatedAt)
             </td>
             <td>
@@ -67,6 +86,6 @@
                 <a asp-page="./Delete" asp-route-id="@item.IdTel">Delete</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>
