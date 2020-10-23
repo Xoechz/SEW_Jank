@@ -67,3 +67,14 @@ Dependency injection
 Designpatterns
 	I muas ehrlich song ka ahnung wos ma mochn.
 
+Webservices
+	XML
+	zustandslos und verteilt
+	Kommunikation überspringen
+		SOAP
+		Rest
+	Merkmale
+		Sprachunabhängig
+		Plattformunabhängig
+		Basiert auf gängigen Internetstandards(HTTP, XML)
+	siehe Moodle
