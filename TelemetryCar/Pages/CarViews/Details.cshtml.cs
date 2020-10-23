@@ -34,6 +34,7 @@ namespace TelemetryCar.Pages.CarViews
             {
                 return NotFound();
             }
+
             return Page();
         }
     }

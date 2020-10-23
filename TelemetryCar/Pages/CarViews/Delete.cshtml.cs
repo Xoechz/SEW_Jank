@@ -19,8 +19,7 @@ namespace TelemetryCar.Pages.CarViews
             _context = context;
         }
 
-        [BindProperty]
-        public CarModel CarModel { get; set; }
+        [BindProperty] public CarModel CarModel { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -35,6 +34,7 @@ namespace TelemetryCar.Pages.CarViews
             {
                 return NotFound();
             }
+
             return Page();
         }
 

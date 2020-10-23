@@ -19,7 +19,7 @@ namespace TelemetryCar.Pages.CarViews
             _context = context;
         }
 
-        public IList<CarModel> CarModel { get;set; }
+        public IList<CarModel> CarModel { get; set; }
 
         public async Task OnGetAsync()
         {

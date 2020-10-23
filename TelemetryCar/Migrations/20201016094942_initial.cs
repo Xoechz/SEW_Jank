@@ -18,10 +18,7 @@ namespace TelemetryCar.Migrations
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     ModifiedAt = table.Column<DateTime>(nullable: false)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CarModel", x => x.IdCar);
-                });
+                constraints: table => { table.PrimaryKey("PK_CarModel", x => x.IdCar); });
 
             migrationBuilder.CreateTable(
                 name: "TelemetryModel",

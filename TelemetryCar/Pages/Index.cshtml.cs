@@ -19,7 +19,6 @@ namespace TelemetryCar.Pages
 
         public void OnGet()
         {
-
         }
     }
 }

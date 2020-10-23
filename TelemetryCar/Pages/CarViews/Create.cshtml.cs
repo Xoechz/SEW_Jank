@@ -24,8 +24,7 @@ namespace TelemetryCar.Pages.CarViews
             return Page();
         }
 
-        [BindProperty]
-        public CarModel CarModel { get; set; }
+        [BindProperty] public CarModel CarModel { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
@@ -35,6 +34,7 @@ namespace TelemetryCar.Pages.CarViews
             {
                 return Page();
             }
+
             CarModel.ModifiedAt = DateTime.Now;
             CarModel.CreatedAt = DateTime.Now;
             _context.CarModel.Add(CarModel);

@@ -12,27 +12,28 @@
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CarModel[0].Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CarModel[0].Typ)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CarModel[0].CreatedAt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CarModel[0].ModifiedAt)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CarModel[0].Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarModel[0].Typ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarModel[0].CreatedAt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarModel[0].ModifiedAt)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.CarModel) {
+    @foreach (var item in Model.CarModel)
+    {
         <tr>
             <td>
-                <a asp-area="" asp-page="/TelemetryViews/Index" asp-route-SearchString="@item.Name" >
+                <a asp-area="" asp-page="/TelemetryViews/Index" asp-route-SearchString="@item.Name">
                     @Html.DisplayFor(modelItem => item.Name)
                 </a>
             </td>
@@ -51,6 +52,6 @@
                 <a asp-page="./Delete" asp-route-id="@item.IdCar">Delete</a>
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>

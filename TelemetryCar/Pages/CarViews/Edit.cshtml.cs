@@ -20,8 +20,7 @@ namespace TelemetryCar.Pages.CarViews
             _context = context;
         }
 
-        [BindProperty]
-        public CarModel CarModel { get; set; }
+        [BindProperty] public CarModel CarModel { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -36,6 +35,7 @@ namespace TelemetryCar.Pages.CarViews
             {
                 return NotFound();
             }
+
             return Page();
         }
 
@@ -47,7 +47,8 @@ namespace TelemetryCar.Pages.CarViews
             {
                 return Page();
             }
-            CarModel.ModifiedAt= DateTime.Now;
+
+            CarModel.ModifiedAt = DateTime.Now;
             _context.Attach(CarModel).State = EntityState.Modified;
 
             try

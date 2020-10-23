@@ -20,21 +20,20 @@ namespace TelemetryCar.Pages.TelemetryViews
             _context = context;
         }
 
-        public IList<TelemetryModel> TelemetryModel { get;set; }
-        [BindProperty(SupportsGet = true)]
-        public string SearchString { get; set; }
+        public IList<TelemetryModel> TelemetryModel { get; set; }
+        [BindProperty(SupportsGet = true)] public string SearchString { get; set; }
+
         public void OnGet()
         {
-           
             TelemetryModel = _context.TelemetryModel
-                .Include(t => t.Car).ToList(); 
+                .Include(t => t.Car).ToList();
             var telemetry = from t in TelemetryModel
                 select t;
             if (!string.IsNullOrEmpty(SearchString))
             {
                 telemetry = telemetry.Where(t => t.Car.Name.ToLower().Contains(SearchString.ToLower()));
             }
-            
+
 
             TelemetryModel = telemetry.ToList();
         }

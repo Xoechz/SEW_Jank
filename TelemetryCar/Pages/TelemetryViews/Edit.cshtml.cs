@@ -20,8 +20,7 @@ namespace TelemetryCar.Pages.TelemetryViews
             _context = context;
         }
 
-        [BindProperty]
-        public TelemetryModel TelemetryModel { get; set; }
+        [BindProperty] public TelemetryModel TelemetryModel { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -37,7 +36,8 @@ namespace TelemetryCar.Pages.TelemetryViews
             {
                 return NotFound();
             }
-           ViewData["CarIdCar"] = new SelectList(_context.CarModel, "IdCar", "IdCar");
+
+            ViewData["CarIdCar"] = new SelectList(_context.CarModel, "IdCar", "IdCar");
             return Page();
         }
 
@@ -49,6 +49,7 @@ namespace TelemetryCar.Pages.TelemetryViews
             {
                 return Page();
             }
+
             TelemetryModel.ModifiedAt = DateTime.Now;
             _context.Attach(TelemetryModel).State = EntityState.Modified;
 

@@ -21,12 +21,11 @@ namespace TelemetryCar.Pages.TelemetryViews
 
         public IActionResult OnGet()
         {
-        ViewData["CarIdCar"] = new SelectList(_context.CarModel, "IdCar", "IdCar");
+            ViewData["CarIdCar"] = new SelectList(_context.CarModel, "IdCar", "IdCar");
             return Page();
         }
 
-        [BindProperty]
-        public TelemetryModel TelemetryModel { get; set; }
+        [BindProperty] public TelemetryModel TelemetryModel { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
@@ -36,6 +35,7 @@ namespace TelemetryCar.Pages.TelemetryViews
             {
                 return Page();
             }
+
             TelemetryModel.ModifiedAt = DateTime.Now;
             TelemetryModel.CreatedAt = DateTime.Now;
             _context.TelemetryModel.Add(TelemetryModel);

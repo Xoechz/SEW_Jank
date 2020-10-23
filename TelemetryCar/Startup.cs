@@ -28,7 +28,7 @@ namespace TelemetryCar
             services.AddRazorPages();
 
             services.AddDbContext<TelemetryCarContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("TelemetryCarContext")));
+                options.UseSqlServer(Configuration.GetConnectionString("TelemetryCarContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,10 +52,7 @@ namespace TelemetryCar
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapRazorPages();
-            });
+            app.UseEndpoints(endpoints => { endpoints.MapRazorPages(); });
         }
     }
 }

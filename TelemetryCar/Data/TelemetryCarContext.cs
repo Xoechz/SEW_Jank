@@ -9,7 +9,7 @@ namespace TelemetryCar.Data
 {
     public class TelemetryCarContext : DbContext
     {
-        public TelemetryCarContext (DbContextOptions<TelemetryCarContext> options)
+        public TelemetryCarContext(DbContextOptions<TelemetryCarContext> options)
             : base(options)
         {
         }
