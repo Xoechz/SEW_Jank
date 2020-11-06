@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic.CompilerServices;
-using TelemetryCar.Data;
+using System.Collections.Generic;
+using System.Linq;
 using TelemetryCar.Model;
 
 namespace TelemetryCar.Pages.TelemetryViews
@@ -28,7 +24,7 @@ namespace TelemetryCar.Pages.TelemetryViews
             TelemetryModel = _context.TelemetryModel
                 .Include(t => t.Car).ToList();
             var telemetry = from t in TelemetryModel
-                select t;
+                            select t;
             if (!string.IsNullOrEmpty(SearchString))
             {
                 telemetry = telemetry.Where(t => t.Car.Name.ToLower().Contains(SearchString.ToLower()));
