@@ -1,0 +1,30 @@
+﻿<Window x:Class="ApiClient.Views.AddCarDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ApiClient.Views"
+        mc:Ignorable="d"
+        Title="Add new car" Height="130" Width="400">
+    <StackPanel Margin="5">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5"/> <!-- Spacing -->
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="15"/> <!-- Spacing -->
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" FontWeight="Bold">Name:</TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0" >Type:</TextBlock>
+            <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Type, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+
+        <Button Margin="5, 15, 5, 0" Command="{Binding AddCommand}">Add</Button>
+    </StackPanel>
+</Window>

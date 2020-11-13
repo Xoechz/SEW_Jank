@@ -1,0 +1,78 @@
+﻿<Window x:Class="ApiClient.Views.CarView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ApiClient.Views"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        mc:Ignorable="d"
+        Height="450" Width="800" Title="Car telemetry client">
+    <!-- DataContext defined in code-behind -->
+    
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="VisibilityConverter"/>
+    </Window.Resources>
+    
+    <Grid>
+        <!-- Loading animation -->
+        <Grid Panel.ZIndex="1" Visibility="{Binding ShowLoadingAnimation, Converter={StaticResource VisibilityConverter}}">
+            <Image gif:ImageBehavior.AnimatedSource="pack://application:,,,/Resources/loading.gif" Height="24" Width="160"/>
+        </Grid>
+        
+        <!-- Content -->
+        <DockPanel Margin="5">
+            <TextBlock DockPanel.Dock="Top" Text="{Binding ErrorText}" Visibility="{Binding ErrorOccured, Converter={StaticResource VisibilityConverter}}" Foreground="Red"/>
+            <ListView DockPanel.Dock="Bottom" Margin="0, 15, 0, 0" ItemsSource="{Binding Cars}" SelectedItem="{Binding SelectedCar}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel>
+                            <Grid HorizontalAlignment="Stretch">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="10"/> <!-- Spacing -->
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.RowSpan="3" Grid.Column="0" Height="64" Width="64" Source="pack://application:,,,/Resources/car_icon_128px.png"/>
+                                <TextBlock Grid.Row="0" Grid.Column="2" FontWeight="Bold">Car ID:</TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="2" FontWeight="Bold">Name:</TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="2">Type:</TextBlock>
+
+                                <TextBlock Grid.Row="0" Grid.Column="4" FontWeight="Bold" Text="{Binding IdCar}"/>
+                                <TextBlock Grid.Row="1" Grid.Column="4" FontWeight="Bold" Text="{Binding Name}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="4" Text="{Binding Type}"/>
+
+                                <TextBlock Grid.Row="1" Grid.Column="6">Created at:</TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="6">Modified at:</TextBlock>
+
+                                <TextBlock Grid.Row="1" Grid.Column="8" Text="{Binding CreatedAtFormatted, Mode=OneWay}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="8" Text="{Binding ModifiedAtFormatted, Mode=OneWay}"/>
+                            </Grid>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            
+                <!-- Context menu -->
+                <ListView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Refresh" Command="{Binding RefreshCommand}"/>
+                        <MenuItem Header="Add new car" Command="{Binding AddCarCommand}"/>
+                        <Separator/>
+                        <MenuItem Header="Delete car" Command="{Binding DeleteCarCommand}"/>
+                    </ContextMenu>
+                </ListView.ContextMenu>
+            </ListView>
+        </DockPanel>
+    </Grid>
+</Window>
