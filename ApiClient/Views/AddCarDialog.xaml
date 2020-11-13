@@ -10,12 +10,12 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
-                <RowDefinition Height="5"/> <!-- Spacing -->
+                <RowDefinition Height="5"/> 
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="15"/> <!-- Spacing -->
+                <ColumnDefinition Width="15"/> 
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 

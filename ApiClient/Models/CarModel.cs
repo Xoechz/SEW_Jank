@@ -17,7 +17,6 @@ namespace ApiClient.Models
         public DateTime? CreatedAt { get; set; }
         public DateTime? ModifiedAt { get; set; }
 
-        // Format with current Culture
         [JsonIgnore]
         public string CreatedAtFormatted => CreatedAt == null ? "-" : ((DateTime)CreatedAt).ToString(Thread.CurrentThread.CurrentCulture);
         [JsonIgnore]
